@@ -1,5 +1,4 @@
-﻿using System;
-@model DestinoCerto.Models.Passenger
+﻿@model DestinoCerto.Models.Passenger
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,11 +43,11 @@
                 @Html.ValidationMessageFor(model => model.Telefone)
             </div>
 
-            <div class="inputRow">
+            @*<div class="inputRow">
                 <strong>@Html.DisplayNameFor(model => model.Endereco):</strong>
                 @Html.EditorFor(model => model.Endereco)
                 @Html.ValidationMessageFor(model => model.Endereco)
-            </div>
+            </div>*@
 
             <div class="areaBtn">
                 <button type="submit" id="submitBtn">Cadastrar Passageiro</button>
