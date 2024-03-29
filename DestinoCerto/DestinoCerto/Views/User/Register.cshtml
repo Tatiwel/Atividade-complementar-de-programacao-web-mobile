@@ -1,0 +1,73 @@
+﻿@model DestinoCerto.Models.User
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link href="/Content/styles.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/validations.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="areaBtn">
+            <h2>Register</h2>
+        </div>
+        @using (Html.BeginForm("Register", "User", FormMethod.Post))
+        {
+        <div class="inputRow">
+            <strong>Nome:</strong>
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="inputRow">
+            <strong>Email:</strong>
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="inputRow">
+            <strong>Senha:</strong>
+            @Html.PasswordFor(model => model.Senha)
+            @Html.ValidationMessageFor(model => model.Senha)
+        </div>
+
+        <div class="inputRow">
+            <strong>Confirmar Senha:</strong>
+            <input type="password" id="confirmSenha" name="ConfirmSenha" class="form-control" />
+        </div>
+
+        <div class="inputRow">
+            <strong>Data de Nascimento:</strong>
+            <input type="date" id="dtNascimento" name="DtNascimento" class="form-control" />
+        </div>
+
+        <div class="inputRow">
+            <strong>CPF:</strong>
+            @Html.TextBoxFor(model => model.Cpf, new
+            {
+                id = "CPF",
+                maxlength = 14,
+                oninput = "formatarCPF(this)"
+            })
+            @Html.ValidationMessageFor(model => model.Cpf)
+        </div>
+
+        <div class="inputRow">
+            <strong>Telefone:</strong>
+            @Html.EditorFor(model => model.Telefone)
+            @Html.ValidationMessageFor(model => model.Telefone)
+        </div>
+
+        <div class="inputRow">
+            <strong>Endereço:</strong>
+            @Html.EditorFor(model => model.Endereco)
+            @Html.ValidationMessageFor(model => model.Endereco)
+        </div>
+
+        <div class="areaBtn">
+            <button type="submit" class="spin-animation" id="submitBtn">Register</button>
+        </div>
+        }
+    </div>
+</body>
+</html>
