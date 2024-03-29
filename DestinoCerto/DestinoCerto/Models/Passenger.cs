@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 namespace DestinoCerto.Models
 {
@@ -31,7 +28,7 @@ namespace DestinoCerto.Models
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [Display(Name = "Endereço")]
-        public Endereco endereco{ get; set; }
+        public Endereco endereco { get; set; }
 
         public Passenger(string nome, string email, DateTime dtNascimento, string cpf, string telefone)
         {

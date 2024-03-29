@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.Ajax.Utilities;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.WebPages;
+﻿using System.ComponentModel.DataAnnotations;
 namespace DestinoCerto.Models
 {
-    /*
-    O cadastro deverá contar com os seguintes campos: tipo de transporte(carro, ônibus, VAN), placa, marca, modelo, ano, capacidade de passageiros, CPF do motorista; o O sistema deverá validar se já existe um cadastro para a mesma placa;
-    o O sistema deverá validar se o CPF do motorista informado é válido(se existe no cadastro de motorista);
-
-    */
     public class Vehicle
     {
         [Required(ErrorMessage = "Campo obrigatório")]
@@ -42,6 +30,10 @@ namespace DestinoCerto.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         [Display(Name = "CPF do Motorista")]
         public string CpfMotorista { get; set; }
+
+        public Vehicle()
+        {
+        }
 
         public Vehicle(string tipoTransporte, string placa, string marca, string modelo, int ano, int capacidadePassageiros, string cpfMotorista)
         {

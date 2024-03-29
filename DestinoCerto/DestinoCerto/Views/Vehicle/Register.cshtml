@@ -1,0 +1,64 @@
+﻿@model DestinoCerto.Models.Vehicle
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Vehicle</title>
+    <link href="/Content/styles.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/validations.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="areaBtn">
+            <h2>Register Vehicle</h2>
+        </div>
+        @using (Html.BeginForm("Register", "Vehicle", FormMethod.Post))
+        {
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.TipoTransporte):</strong>
+                @Html.EditorFor(model => model.TipoTransporte)
+                @Html.ValidationMessageFor(model => model.TipoTransporte)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Placa):</strong>
+                @Html.EditorFor(model => model.Placa)
+                @Html.ValidationMessageFor(model => model.Placa)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Marca):</strong>
+                @Html.EditorFor(model => model.Marca)
+                @Html.ValidationMessageFor(model => model.Marca)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Modelo):</strong>
+                @Html.EditorFor(model => model.Modelo)
+                @Html.ValidationMessageFor(model => model.Modelo)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Ano):</strong>
+                @Html.EditorFor(model => model.Ano)
+                @Html.ValidationMessageFor(model => model.Ano)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.CapacidadePassageiros):</strong>
+                @Html.EditorFor(model => model.CapacidadePassageiros)
+                @Html.ValidationMessageFor(model => model.CapacidadePassageiros)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.CpfMotorista):</strong>
+                @Html.EditorFor(model => model.CpfMotorista)
+                @Html.ValidationMessageFor(model => model.CpfMotorista)
+            </div>
+
+            <div class="areaBtn">
+                <button type="submit" id="submitBtn">Registar Veículo</button>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,11 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+@model DestinoCerto.Models.Passenger
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Passenger</title>
+    <link href="/Content/styles.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/validations.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="areaBtn">
+            <h2>Register Passenger</h2>
+        </div>
+        @using (Html.BeginForm("Register", "Passenger", FormMethod.Post))
+        {
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Nome):</strong>
+                @Html.EditorFor(model => model.Nome)
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
 
-namespace DestinoCerto.Views.Passenger
-{
-	public class Passageiro
-	{
-	}
-}
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Email):</strong>
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.DtNascimento):</strong>
+                <input type="date" id="dtNascimento" name="DtNascimento" class="form-control" />
+                @Html.ValidationMessageFor(model => model.DtNascimento)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Cpf):</strong>
+                @Html.EditorFor(model => model.Cpf)
+                @Html.ValidationMessageFor(model => model.Cpf)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Telefone):</strong>
+                @Html.EditorFor(model => model.Telefone)
+                @Html.ValidationMessageFor(model => model.Telefone)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Endereco):</strong>
+                @Html.EditorFor(model => model.Endereco)
+                @Html.ValidationMessageFor(model => model.Endereco)
+            </div>
+
+            <div class="areaBtn">
+                <button type="submit" id="submitBtn">Cadastrar Passageiro</button>
+            </div>
+        }
+    </div>
+</body>
+</html>

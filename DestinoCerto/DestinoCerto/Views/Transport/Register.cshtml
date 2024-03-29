@@ -1,1 +1,58 @@
-﻿
+﻿@model DestinoCerto.Models.Transport
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Transport</title>
+    <link href="/Content/styles.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/validations.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="areaBtn">
+            <h2>Register Transport</h2>
+        </div>
+        @using (Html.BeginForm("Register", "Transport", FormMethod.Post))
+        {
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.PlacaVeiculo):</strong>
+                @Html.EditorFor(model => model.PlacaVeiculo)
+                @Html.ValidationMessageFor(model => model.PlacaVeiculo)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.CpfPassageiro):</strong>
+                @Html.EditorFor(model => model.CpfPassageiro)
+                @Html.ValidationMessageFor(model => model.CpfPassageiro)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.DataTransporte):</strong>
+                <input type="date" id="dataTransporte" name="DataTransporte" class="form-control" />
+                @Html.ValidationMessageFor(model => model.DataTransporte)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.HoraTransporte):</strong>
+                <input type="time" id="horaTransporte" name="HoraTransporte" class="form-control" />
+                @Html.ValidationMessageFor(model => model.HoraTransporte)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.KmTrajeto):</strong>
+                @Html.EditorFor(model => model.KmTrajeto)
+                @Html.ValidationMessageFor(model => model.KmTrajeto)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.ValorCobrado):</strong>
+                @Html.EditorFor(model => model.ValorCobrado)
+                @Html.ValidationMessageFor(model => model.ValorCobrado)
+            </div>
+
+            <div class="areaBtn">
+                <button type="submit" id="submitBtn">Register Transport</button>
+            </div>
+        }
+    </div>
+</body>
+</html>

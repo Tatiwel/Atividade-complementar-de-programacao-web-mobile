@@ -1,1 +1,40 @@
-﻿
+﻿@model DestinoCerto.Models.Driver
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Driver</title>
+    <link href="/Content/styles.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/validations.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="areaBtn">
+            <h2>Register Driver</h2>
+        </div>
+        @using (Html.BeginForm("Register", "Driver", FormMethod.Post))
+        {
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Nome):</strong>
+                @Html.EditorFor(model => model.Nome)
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.DtNascimento):</strong>
+                <input type="date" id="dtNascimento" name="DtNascimento" class="form-control" />
+                @Html.ValidationMessageFor(model => model.DtNascimento)
+            </div>
+
+            <div class="inputRow">
+                <strong>@Html.DisplayNameFor(model => model.Cpf):</strong>
+                @Html.EditorFor(model => model.Cpf)
+                @Html.ValidationMessageFor(model => model.Cpf)
+            </div>
+
+            <div class="areaBtn">
+                <button type="submit" id="submitBtn">Cadastrar Moorista</button>
+            </div>
+        }
+    </div>
+</body>
+</html>
