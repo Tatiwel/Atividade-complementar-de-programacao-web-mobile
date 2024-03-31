@@ -31,6 +31,10 @@ namespace DestinoCerto.Models
         [Display(Name = "Valor Cobrado")]
         public double ValorCobrado { get; set; }
 
+        public Transport()
+        {
+        }
+
         public Transport(string placaVeiculo, string cpfPassageiro, string dataTransporte, string horaTransporte, int kmTrajeto, double valorCobrado)
         {
             PlacaVeiculo = placaVeiculo;

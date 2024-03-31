@@ -8,7 +8,7 @@ namespace DestinoCerto.Models
     {
 
         [Required(ErrorMessage = "Campo obrigatório")]
-        [StringLength(10)]
+        [StringLength(100)]
         [Display(Name = "Nome")]
         public string Nome { get; set; }
 
@@ -24,6 +24,9 @@ namespace DestinoCerto.Models
         //[Display(Name = "Endereço")]
         //public Endereco endereco{ get; set; 
 
+        public Driver()
+        {
+        }
         public Driver(string nome, DateTime dtNascimento, string cpf)
         {
             Nome = nome;

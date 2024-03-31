@@ -1,17 +1,36 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+using DestinoCerto.Models;
 
 namespace DestinoCerto.Controllers
 {
     public class TransportController : Controller
     {
+        // Lista para armazenar os transportes cadastrados
+        private static List<Transport> transportList = new List<Transport>();
+
+        // GET: Transport/Register
         public ActionResult Register()
         {
             return View();
         }
 
-        public ActionResult Report()
+        // POST: Transport/Register
+        [HttpPost]
+        public ActionResult Register(Transport transport)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                // Adiciona o transporte à lista (simulando a inserção no banco de dados)
+                transportList.Add(transport);
+
+                // Redireciona para a página de menu
+                return RedirectToAction("Menu", "User");
+            }
+
+            // Se houver erros de validação, retorna a view de registro com os erros
+            return View(transport);
         }
     }
 }
