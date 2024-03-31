@@ -18,8 +18,16 @@ namespace DestinoCerto
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            // Rota para a página de registro de usuário
+            routes.MapRoute(
+                 name: "Register",
+                 url: "User/Register",
+                 defaults: new { controller = "User", action = "Register" }
+           );
+
         }
     }
 }

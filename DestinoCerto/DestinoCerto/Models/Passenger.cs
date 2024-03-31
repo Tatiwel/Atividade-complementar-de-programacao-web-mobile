@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+
 namespace DestinoCerto.Models
 {
     public class Passenger
     {
         [Required(ErrorMessage = "Campo obrigatório")]
-        [StringLength(10)]
+        [StringLength(100)]
         [Display(Name = "Nome")]
         public string Nome { get; set; }
 
@@ -26,9 +27,12 @@ namespace DestinoCerto.Models
         [Display(Name = "Telefone")]
         public string Telefone { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório")]
-        [Display(Name = "Endereço")]
-        public Endereco endereco { get; set; }
+        // Endereco foi comentado pois não está sendo utilizado e pode gerar erro na view
+        // public Endereco endereco { get; set; }
+
+        public Passenger()
+        {
+        }
 
         public Passenger(string nome, string email, DateTime dtNascimento, string cpf, string telefone)
         {
