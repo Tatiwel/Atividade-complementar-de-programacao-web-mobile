@@ -1,3 +1,11 @@
 ﻿.inputRow span {
     color: red;
 }
+
+.voltar_butao {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: large;
+    cursor: pointer;
+}
