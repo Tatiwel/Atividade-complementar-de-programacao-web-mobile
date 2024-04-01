@@ -31,6 +31,7 @@ namespace DestinoCerto.Models
         [Display(Name = "Valor Cobrado")]
         public double ValorCobrado { get; set; }
 
+
         public Transport()
         {
         }

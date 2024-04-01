@@ -14,15 +14,12 @@ namespace DestinoCerto.Controllers
         {
             if (dataInicio == null || dataFim == null)
             {
-                // Se as datas não forem fornecidas, retorna a lista completa de transportes
                 return View(TransportController.transportList);
             }
 
-            // Converte as strings de data de início e fim para DateTime
             DateTime dataInicioValue = dataInicio.Value;
             DateTime dataFimValue = dataFim.Value;
 
-            // Filtra os transportes pelo período informado
             var transportesFiltrados = TransportController.transportList.Where(t =>
                 DateTime.Parse(t.DataTransporte) >= dataInicioValue && DateTime.Parse(t.DataTransporte) <= dataFimValue);
 

@@ -34,5 +34,9 @@
 }
 
 .btnTable:hover {
-    background-color: #00bb1f
+    background-color: #00bb1f;
+}
+
+.valueTotal {
+    margin-top: 15px;
 }

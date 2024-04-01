@@ -6,7 +6,24 @@
     <title>Relatório de Transportes</title>
     <link href="~/Content/Cadastro.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Table.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/RegisterError.css" rel="stylesheet" type="text/css" />
+    <script>
+        window.onload = function () {
+            var totalKm = 0;
+            var valorTotal = 0;
+
+            var table = document.querySelector('.table');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 1; i < rows.length; i++) { // Começa do índice 1 para evitar o cabeçalho da tabela
+                var cells = rows[i].getElementsByTagName('td');
+                var km = parseFloat(cells[4].innerText); // Ajuste o índice se necessário
+                totalKm += km;
+            }
+
+            valorTotal = totalKm * 0.40;
+            document.getElementById('valueTotal').innerText = 'Total Arrecadado: R$ ' + valorTotal.toFixed(2);
+        };
+    </script>
 </head>
 <body>
     <div class="box">
@@ -45,17 +62,19 @@
                             <td>@transport.DataTransporte</td>
                             <td>@transport.HoraTransporte</td>
                             <td>@transport.KmTrajeto</td>
-                            <td>@transport.ValorCobrado</td>
                         </tr>
                     }
                 </tbody>
             </table>
+            <div class="valueTotal">
+                <strong id="valueTotal"></strong>
+            </div>
         }
         else
         {
             <p>Nenhum transporte registrado.</p>
         }
-        <button class="voltar_butao" onclick="location.href='/User/Menu'" type="button">Voltar</button>
+
     </div>
 </body>
 </html>

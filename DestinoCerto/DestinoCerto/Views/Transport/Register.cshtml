@@ -46,9 +46,10 @@
 
             <div class="inputRow">
                 <strong>@Html.DisplayNameFor(model => model.ValorCobrado):</strong>
-                @Html.EditorFor(model => model.ValorCobrado)
+                <input type="text" id="ValorCobrado" name="ValorCobrado" class="form-control" disabled value="0.40" />
                 @Html.ValidationMessageFor(model => model.ValorCobrado)
             </div>
+
 
             <div class="areaBtn">
                 <button type="submit" id="submitBtn">Register Transport</button>

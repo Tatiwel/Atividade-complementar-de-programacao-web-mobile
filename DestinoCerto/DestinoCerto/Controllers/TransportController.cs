@@ -26,7 +26,7 @@ namespace DestinoCerto.Controllers
                 transportList.Add(transport);
 
                 // Redireciona para o relatório financeiro
-                return RedirectToAction("RelatorioFinanceiro", "FinancialReport");
+                return RedirectToAction("Menu", "User");
             }
 
             // Se houver erros de validação, retorna a view de registro com os erros
