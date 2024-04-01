@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using DestinoCerto.Models;
 
@@ -7,28 +7,28 @@ namespace DestinoCerto.Controllers
 {
     public class PassengerController : Controller
     {
-        // Lista para armazenar os passageiros cadastrados
         private static List<Passenger> passengers = new List<Passenger>();
 
-        // GET: Passenger/Register
         public ActionResult Register()
         {
             return View();
         }
 
-        // POST: Passenger/Register
         [HttpPost]
         public ActionResult Register(Passenger passenger)
         {
-            if (ModelState.IsValid)
+
+            if (passengers.Any(p => p.Cpf == passenger.Cpf))
             {
-                // Adicionar o passageiro à lista
-                passengers.Add(passenger);
-                // Redirecionar para a página de menu
-                return RedirectToAction("Menu", "User");
+                ModelState.AddModelError("Cpf", "Já existe um passageiro cadastrado com este CPF.");
             }
 
-            // Se houver erros de validação, retornar à página de registro
+            if (ModelState.IsValid)
+            {
+
+                passengers.Add(passenger);
+                return RedirectToAction("Menu", "User");
+            }
             return View(passenger);
         }
     }

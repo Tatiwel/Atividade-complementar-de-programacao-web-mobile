@@ -1,3 +1,5 @@
+C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\obj\Debug\DestinoCerto.csproj.AssemblyReference.cache
+C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\obj\Debug\DestinoCerto.csproj.CoreCompileInputs.cache
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\bin\DestinoCerto.dll.config
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\bin\DestinoCerto.dll
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\bin\DestinoCerto.pdb
@@ -86,8 +88,6 @@ C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementa
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\bin\pt-br\System.Web.Webpages.Razor.resources.dll
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\obj\Debug\DestinoCerto.csproj.AssemblyReference.cache
-C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\obj\Debug\DestinoCerto.csproj.CoreCompileInputs.cache
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\obj\Debug\DestinoC.9E9D943E.Up2Date
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\obj\Debug\DestinoCerto.dll
 C:\Second_Path\Codes\Faculdade\ProgramacaoWebMobile _Layse_\AtividadeComplementar 2024.03.19\DestinoCerto\DestinoCerto\obj\Debug\DestinoCerto.pdb
