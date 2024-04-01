@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DestinoCerto.Models.Transport>
+
+@{
+    ViewBag.Title = "Relatório Financeiro";
+}
+
+<link href="~/Content/Cadastro.css" rel="stylesheet" type="text/css" />
+<h2>Relatório Financeiro</h2>
+
+@using (Html.BeginForm("RelatorioFinanceiro", "FinancialReport", FormMethod.Post))
+{
+    <div class="box">
+        <label for="dataInicio">Data de Início:</label>
+        <input type="date" name="dataInicio" class="form-control" />
+
+        <label for="dataFim">Data de Fim:</label>
+        <input type="date" name="dataFim" class="form-control" />
+
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </div>
+}
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tipo de Transporte</th>
+                <th>Quantidade</th>
+                <th>Valor Arrecadado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var group in Model.GroupBy(t => t.PlacaVeiculo)) // Mudança aqui
+            {
+                <tr>
+                    <td>@group.Key</td>
+                    <td>@group.Count()</td>
+                    <td>@group.Sum(t => t.ValorCobrado)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum dado encontrado para o período selecionado.</p>
+}

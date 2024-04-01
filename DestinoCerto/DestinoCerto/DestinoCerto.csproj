@@ -204,6 +204,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Driver\List.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\FinancialReport\RelatorioFinanceiro.cshtml" />
     <None Include="Views\User\Register.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -228,6 +229,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\DriverController.cs" />
+    <Compile Include="Controllers\FinancialReportController.cs" />
     <Compile Include="Controllers\PassengerController.cs" />
     <Compile Include="Controllers\TransportController.cs" />
     <Compile Include="Controllers\UserController.cs" />
