@@ -1,48 +1,60 @@
 ﻿@model IEnumerable<DestinoCerto.Models.Transport>
 
-@{
-    ViewBag.Title = "Relatório Financeiro";
-}
-
-<link href="~/Content/Cadastro.css" rel="stylesheet" type="text/css" />
-<h2>Relatório Financeiro</h2>
-
-@using (Html.BeginForm("RelatorioFinanceiro", "FinancialReport", FormMethod.Post))
-{
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relatório de Transportes</title>
+    <link href="~/Content/Cadastro.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Table.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/RegisterError.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
     <div class="box">
-        <label for="dataInicio">Data de Início:</label>
-        <input type="date" name="dataInicio" class="form-control" />
+        <h2>Relatório de Transportes</h2>
+        <div>
+            <form method="post" action="@Url.Action("RelatorioFinanceiro", "FinancialReport")">
+                <label for="dataInicio">Data de Início:</label>
+                <input type="date" name="dataInicio" id="dataInicio" class="form-control" />
 
-        <label for="dataFim">Data de Fim:</label>
-        <input type="date" name="dataFim" class="form-control" />
+                <label for="dataFim">Data de Fim:</label>
+                <input type="date" name="dataFim" id="dataFim" class="form-control" />
 
-        <button type="submit" class="btn btn-primary">Filtrar</button>
+                <button type="submit" class="btnTable">Filtrar</button>
+            </form>
+        </div>
+
+        @if (Model != null && Model.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Placa do Veículo</th>
+                        <th>CPF do Passageiro</th>
+                        <th>Data do Transporte</th>
+                        <th>Hora do Transporte</th>
+                        <th>Quantidade de KM do Trajeto</th>
+                        <th>Valor Cobrado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var transport in Model)
+                    {
+                        <tr>
+                            <td>@transport.PlacaVeiculo</td>
+                            <td>@transport.CpfPassageiro</td>
+                            <td>@transport.DataTransporte</td>
+                            <td>@transport.HoraTransporte</td>
+                            <td>@transport.KmTrajeto</td>
+                            <td>@transport.ValorCobrado</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Nenhum transporte registrado.</p>
+        }
     </div>
-}
-
-@if (Model != null && Model.Any())
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Tipo de Transporte</th>
-                <th>Quantidade</th>
-                <th>Valor Arrecadado</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var group in Model.GroupBy(t => t.PlacaVeiculo)) // Mudança aqui
-            {
-                <tr>
-                    <td>@group.Key</td>
-                    <td>@group.Count()</td>
-                    <td>@group.Sum(t => t.ValorCobrado)</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-else
-{
-    <p>Nenhum dado encontrado para o período selecionado.</p>
-}
+</body>
+</html>

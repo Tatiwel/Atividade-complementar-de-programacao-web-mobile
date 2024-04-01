@@ -34,65 +34,26 @@ body {
     padding: 1.5vw;
 }
 
-    .container_Cadastro h2 {
-        font-size: 2rem;
-        margin-top: 1rem;
-    }
-
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
     font-weight: 700;
+    margin-bottom: 4rem;
 }
 
-.container_Form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.div_Form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0.5rem;
+.container_Cadastro h2 {
+    font-size: 2rem;
     margin-top: 1rem;
 }
-
-    .div_Form label {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    .div_Form input {
-        border-radius: 1rem;
-        padding: 0.5rem;
-        max-width: 380px;
-        border-radius: 2rem;
-        font-size: 14px;
-        outline-color: #48efe0;
-    }
-
-.btnConfirm {
-    padding: 10px;
-    background-color: #00d222;
-    color: #fff;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-    .btnConfirm:hover {
-        background-color: #00bb1f
-    }
 
 .butao_menu {
-    padding: 0.25rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: large;
+}
+
+.butao_menu:hover{
+    cursor:pointer;
 }
